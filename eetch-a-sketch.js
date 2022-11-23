@@ -1,8 +1,3 @@
-let color;
-document.getElementById("colorpicker").addEventListener("change", () => {
-    color = document.getElementById("colorpicker").value;
-});
-document.getElementById("black").addEventListener("click", () => color = "black");
 
 function makeGrid(x, y) {
     for (let i = 0; i < x; i++) {
@@ -21,6 +16,12 @@ function makeGrid(x, y) {
     };
 };
 
+let color;
+document.getElementById("colorpicker").addEventListener("change", () => {
+    color = document.getElementById("colorpicker").value;
+});
+document.getElementById("black").addEventListener("click", () => color = "black");
+
 function randomRGB() {
     const r = Math.floor(Math.random() * 256);
     const g = Math.floor(Math.random() * 256);
@@ -28,6 +29,8 @@ function randomRGB() {
 
     return `rgb(${r}, ${g}, ${b})`;
 };
+
+const pixels = document.getElementsByClassName("pixel");
 
 document.getElementById("confirm-button").addEventListener("click", () => {
     const dimensionX = document.getElementById("grid-size").value;
@@ -39,17 +42,23 @@ document.getElementById("confirm-button").addEventListener("click", () => {
 
     makeGrid(dimensionX, dimensionY);
 
-    const pixels = document.getElementsByClassName("pixel");
-
     for (let i = 0; i < pixels.length; i++) {
         pixels[i].addEventListener("mouseover", () => {
             pixels[i].style.backgroundColor = color;
         });
     };
-
-    document.getElementById("clear-grid").addEventListener("click", () => {
-        for (let i = 0; i < pixels.length; i++) {
-            pixels[i].style.backgroundColor = "white";
-        };
-    });
 });
+
+document.getElementById("clear-grid").addEventListener("click", () => {
+    for (let i = 0; i < pixels.length; i++) {
+        pixels[i].style.backgroundColor = "beige";
+    };
+});
+
+function deleteGrid() {
+    const theDiv = document.getElementById("container");
+    while (theDiv.hasChildNodes()) {
+        theDiv.removeChild(theDiv.firstChild);
+    };
+};
+document.getElementById("delete-grid").addEventListener("click", () => deleteGrid());

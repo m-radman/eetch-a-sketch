@@ -18,14 +18,18 @@
         <div id="settings">
             <div id="dimensions">
                 <input id="grid-size" type="number" placeholder="Enter grid size" max="100" value="">
-                <input id="confirm-button" type="submit" value="Confirm">
+                <div id="buttons">
+                    <input id="confirm-button" type="submit" value="Create grid">
+                    <button id="delete-grid">Delete grid</button>
+                </div>
             </div>
-            <p>Pick a color:</p>
-            <ul id="color">
-                <input type="color" id="colorpicker" value="#ffffff">
-                <button id="black">Black</button>
-                <button id="rainbow">Rainbow</button>
-            </ul>
+            <div id="color">
+                <p>Pick a color:</p>
+                <div id="colorbtn">
+                    <input type="color" id="colorpicker" value="#ffffff">
+                    <button id="black">Black</button>
+                </div>
+            </div>
             <button id="clear-grid">Clear</button>
         </div>
     </div>
