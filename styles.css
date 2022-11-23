@@ -1,0 +1,23 @@
+#main {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#container {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 600px;
+    height: 600px;
+    border: 5px solid black;
+    margin-right: 165px;
+}
+
+#settings {
+    display: flex;
+    flex-direction: column;
+}
